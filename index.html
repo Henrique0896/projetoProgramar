@@ -9,9 +9,11 @@
     <script src="script.js"></script>
 </head>
 
-<body>
+<body onload="mostrarSanduiches()">
 
-    <button type="button" class="btn btn" onclick="criarSanduiche()">Botão</button>
+    <button type="button" class="btn btn" onclick="criarSanduiche()">Criar</button>
+    <button type="button" class="btn btn" onclick="editar(prompt('Qual id voce quer editar?'))">Editar</button>
+
     <h2>Lanchonete</h2>
     <div id="sanduiches"></div>
 </body>
