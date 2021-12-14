@@ -75,25 +75,16 @@ function editar(id) {
 }
 
 function excluir(id) {
-
     sanduiches = lerDados("sanduiches")
     if (sanduiches == null) {
         sanduiches = []
     }
-
-
     for (var i = 0; i < sanduiches.length; i++) {
-
         if (sanduiches[i].id == id) {
-
             sanduiches.splice(i, 1);
-            alert(id)
         }
 
     }
-
-
-
     salvarDados("sanduiches", sanduiches)
     mostrarSanduiches()
 }
