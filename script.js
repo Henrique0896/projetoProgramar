@@ -75,26 +75,23 @@ function editar(id) {
 }
 
 function excluir(id) {
-    indexSanduicheSelecionado = 0
-    existeId = false
+
     sanduiches = lerDados("sanduiches")
     if (sanduiches == null) {
         sanduiches = []
     }
 
-    sanduiches.forEach((sanduiche) => {
 
-        if (sanduiche.id == id) {
-            existeId = true
-        } else {
-            indexSanduicheSelecionado += 1
+    for (var i = 0; i < sanduiches.length; i++) {
+
+        if (sanduiches[i].id == id) {
+
+            sanduiches.splice(i, 1);
+            alert(id)
         }
-    })
 
-
-    if (existeId) {
-        sanduiches.splice(indexSanduicheSelecionado, 1)
     }
+
 
 
     salvarDados("sanduiches", sanduiches)
