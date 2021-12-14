@@ -75,21 +75,27 @@ function editar(id) {
 }
 
 function excluir(id) {
+    indexSanduicheSelecionado = 0
+    existeId = false
     sanduiches = lerDados("sanduiches")
     if (sanduiches == null) {
         sanduiches = []
     }
 
-    sanduiche = sanduiches.forEach((sanduiche) => {
+    sanduiches.forEach((sanduiche) => {
 
         if (sanduiche.id == id) {
-            return sanduiche
+            existeId = true
+        } else {
+            indexSanduicheSelecionado += 1
         }
     })
 
-    index = sanduiches.indexOf(sanduiche)
 
-    sanduiches.splice(index, 1)
+    if (existeId) {
+        sanduiches.splice(indexSanduicheSelecionado, 1)
+    }
+
 
     salvarDados("sanduiches", sanduiches)
     mostrarSanduiches()
